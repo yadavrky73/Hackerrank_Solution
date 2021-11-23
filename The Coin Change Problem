@@ -1,0 +1,28 @@
+def getWays(B,A):
+    # Write your code here
+    dp=[0]*(B+1) 
+    dp[0]=1
+            
+    for i in range(1,len(A)+1):
+        for j in range(1,B+1):
+            if A[i-1]<=j:
+                dp[j]=dp[j-A[i-1]]+dp[j]
+    return dp[-1]
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    first_multiple_input = input().rstrip().split()
+
+    n = int(first_multiple_input[0])
+
+    m = int(first_multiple_input[1])
+
+    c = list(map(int, input().rstrip().split()))
+
+    # Print the number of ways of making change for 'n' units using coins having the values given by 'c'
+
+    ways = getWays(n, c)
+
+    fptr.write(str(ways) + '\n')
+
+    fptr.close()
