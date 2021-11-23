@@ -1,0 +1,8 @@
+import math
+for i in range (int(input())):
+    n=int(input())
+    s=bin(n-1).count('1')
+    if s%2==0:
+        print('Richard')
+    else:
+        print('Louise')
