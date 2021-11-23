@@ -1,0 +1,32 @@
+import os
+import re
+import sys
+def climbingLeaderboard(r, p):
+    rr=set(r)
+    rr=sorted(rr)
+    i=0
+    n=len(rr)
+    arr=[]
+    for j in p:
+        while(i<n and rr[i]<=j):
+            i+=1
+        arr.append(n-i+1)
+    return arr
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    ranked_count = int(input().strip())
+
+    ranked = list(map(int, input().rstrip().split()))
+
+    player_count = int(input().strip())
+
+    player = list(map(int, input().rstrip().split()))
+
+    result = climbingLeaderboard(ranked, player)
+
+    fptr.write('\n'.join(map(str, result)))
+    fptr.write('\n')
+
+    fptr.close()
