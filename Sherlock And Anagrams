@@ -1,0 +1,30 @@
+def sherlockAndAnagrams(s):
+    # Write your code here
+    #print(Counter(s))
+    c=0
+    d=Counter(s)
+    for i in range(2,len(s)):
+        ss=s[:i]
+        l=len(ss)
+        d["".join(sorted(ss))]+=1
+        for j in range(1,len(s)):
+            if j+l<=len(s):
+                d["".join(sorted(s[j:j+l]))]+=1
+    for i,j in d.items():
+        c+=j*(j-1)//2
+    return c
+    
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    q = int(input().strip())
+
+    for q_itr in range(q):
+        s = input()
+
+        result = sherlockAndAnagrams(s)
+
+        fptr.write(str(result) + '\n')
+
+    fptr.close()
