@@ -1,0 +1,17 @@
+l=[]
+for i in range(int(input())):
+    s=input()
+    for j in range(len(s)):
+        for k in range(j+1,len(s)+1):
+            l.append(s[j:k])
+#print(l)
+ll=set(l)
+ll=list(ll)
+ll=sorted(ll)
+#print(ll)
+for i in range(int(input())):
+    n=int(input())
+    if n>len(ll):
+        print('INVALID')
+    else:
+        print(ll[n-1])
