@@ -1,0 +1,31 @@
+def hackerlandRadioTransmitters(x, k):
+    x=sorted(x)
+    c=0
+    n=len(x)
+    i=0
+    while(i<n):
+        a=x[i]+k
+        while(i<n and x[i]<=a):
+            i+=1
+        i-=1
+        c+=1
+        a=x[i]+k
+        while(i<n and x[i]<=a):
+            i+=1
+    return c
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    first_multiple_input = input().rstrip().split()
+
+    n = int(first_multiple_input[0])
+
+    k = int(first_multiple_input[1])
+
+    x = list(map(int, input().rstrip().split()))
+
+    result = hackerlandRadioTransmitters(x, k)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
