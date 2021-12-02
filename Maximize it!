@@ -1,0 +1,17 @@
+from itertools import product
+n,a=map(int,input().split())
+s=[]
+for i in range(n):
+   
+    arr=list(map( int,input().split()))
+    arr=arr[1:]
+    s.append(arr)
+#print(list(product(*s)))
+aa=list(product(*s))
+l=[]
+for i in aa:
+    ss=0
+    for j in i:
+        ss+=j**2
+    l.append(ss%a)
+print(max(l))
