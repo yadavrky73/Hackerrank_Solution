@@ -1,0 +1,19 @@
+def define(s1):
+    for j in range(len(s1)-2):
+        if s1[j]!=s1[j+2]:
+            return 0
+    return len(s1)
+from itertools import combinations
+d,s,l1,y=int(input()),input(),[],0
+p=set(s)
+if len(p)>2:
+    for k in combinations(p,len(p)-2):
+        s1=s
+        for j in k:
+            s1=s1.replace(j,'')
+            u=define(s1)
+            if u>y: y=u
+    print(y)
+else:
+    if len(p)<=1: print('0') 
+    else: print('2')
