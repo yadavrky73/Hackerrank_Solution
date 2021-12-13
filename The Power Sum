@@ -1,0 +1,19 @@
+from itertools import combinations
+n=int(input())
+a=int(input())
+b=int(n**(1/a))
+c=0
+l=[]
+for i in range(1,b+1):
+    l.append(i)
+for j in range(1,b+1):
+    p=combinations(l,j)
+    #print(list(p))
+    for v in p:
+        aa=0
+        for i in v:
+            aa+=int(i**a)
+        if aa==n:
+            c+=1
+print(c)
+   
