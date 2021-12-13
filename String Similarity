@@ -1,0 +1,15 @@
+for i in range(int(input())):
+    s=input()
+    
+    c=0
+    for i in range(len(s)):
+        aa=s[i::]
+        b=0
+        for i in range(len(aa)):
+            if aa[i]==s[i]:
+                b+=1
+            else:
+                break
+        c+=b
+    print(c)
+        
