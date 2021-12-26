@@ -1,0 +1,46 @@
+def repeatedString(s, n):
+    # Write your code here
+    s1=""
+    l=len(s)
+    if(n%l==0):
+        aa=n//l
+        while(aa!=0):
+            s1+=str(s)
+            aa-=1
+        return s1.count('a')
+    else:
+        aa=n//l
+        b=n%l
+        while(aa!=0):
+            s1+=str(s)
+            aa-=1
+        s1+=str(s[:b+1])
+        returns1.count('a')
+            
+    
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    n = int(input().strip())
+
+    result = repeatedString(s, n)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
+M-2
+s=input()
+n=int(input())
+c=s.count('a')
+l=len(s)
+x=n//l
+if (n%l==0):
+    print(c*x)
+else:
+    p=n%l
+    print((c*x)+s[:p].count('a'))
+
+b
